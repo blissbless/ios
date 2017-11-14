@@ -295,7 +295,7 @@ extern NSString * NotReachableNetworkForDownloadsNotification;
  * For iPad:
  *    - The same TabBarController with three items.
  *    - Detail View.
- *
+ * 
  */
 - (void) generateAppInterfaceFromLoginScreen:(BOOL)isFromLogin;
 
@@ -331,6 +331,6 @@ extern NSString * NotReachableNetworkForDownloadsNotification;
  *
  * @param user -> UserDto to set as active user
  */
-- (void) switchActiveUserTo:(UserDto *) user inHardMode:(BOOL)hardMode withCompletionHandler:(void (^)(void)) completionHandler;
+- (void) switchActiveUserTo:(UserDto *) user inHardMode:(BOOL)hardMode;
 
 @end
