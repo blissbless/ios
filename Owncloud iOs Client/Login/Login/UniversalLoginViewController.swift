@@ -867,6 +867,9 @@ public enum TextfieldType: String {
                 
                 if ( (self.loginMode == .update || self.loginMode == .expire) && credentials.userName != self.user?.username ) {
                     self.showCredentialsError(NSLocalizedString("credentials_different_user", comment: "") )
+                    //Delete current wrong cookies and relaunch check url to get correct ones
+                    UtilsFramework.deleteAllCookies()
+                    self.checkCurrentUrl()
                     
                 } else {
 
@@ -886,6 +889,9 @@ public enum TextfieldType: String {
                         
                         if (ManageUsersDB.isExistUser(self.user)) {
                             self.showURLError(NSLocalizedString("account_not_new", comment: ""))
+                            //Delete current wrong cookies and relaunch check url to get correct ones
+                            UtilsFramework.deleteAllCookies()
+                            self.checkCurrentUrl()
                             
                         } else {
                             
